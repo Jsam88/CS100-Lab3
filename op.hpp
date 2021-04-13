@@ -34,4 +34,5 @@ class NegativeOpMock: public Base {
         virtual string stringify() { return "-1"; }
 }
 
+
 #endif //__OP_HPP__
