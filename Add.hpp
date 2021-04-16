@@ -4,19 +4,28 @@
 #include <iostream>
 #include "base.hpp"
 #include <string>
+#include "op.hpp"
 
-Class Add: public Base {
+
+class Add: public Base {
         public:
-                Add(Base * LEFT, Base* RIGHT) {
+                Add(Base* LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;
                 }
 
-                virtual double evaluate() { return Lnode + Rnode ; }
-                virtual std:string stringify() { return std::to_string(Lnode "+" Rnode);}
-        private:
+		virtual double evaluate() { return Lnode->evaluate() + Rnode->evaluate() ; }
+                virtual std::string stringify(){
+		str += Lnode->stringify();
+		str += "+";
+		str += Rnode->stringify();
+		return str;
+}      
+
+	 private:
                 Base* Lnode = NULL;
                 Base* Rnode = NULL;
+		std::string str;
 };
 
 #endif

@@ -5,18 +5,26 @@
 #include "base.hpp"
 #include <string>
 #include <cmath>
-Class Pow: public Base {
+#include "op.hpp"
+
+class Pow: public Base {
         public:
                 Pow(Base * LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;
                 }
 
-                virtual double evaluate() { return pow(Lnode,Rnode) ; }
-                virtual std:string stringify() { return std::to_string(Lnode "**" Rnode);}
+                virtual double evaluate() { return Lnode->evaluate() + Rnode->evaluate() ; }
+                virtual std::string stringify(){
+                str += Lnode->stringify();
+                str += "*";
+                str += Rnode->stringify();
+                return str;
+}
         private:
                 Base* Lnode = NULL;
                 Base* Rnode = NULL;
+		std::string str;
 };
 
 #endif
