@@ -13,7 +13,7 @@ class Div: public Base {
                 std::string str;
 
         public:
-                Div(Base * LEFT, Base* RIGHT) {
+                Div(Base* LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;
                 }
@@ -21,10 +21,10 @@ class Div: public Base {
                 virtual double evaluate() { return Lnode->evaluate() / Rnode->evaluate(); }
                 virtual std::string stringify() {
 			 str += Lnode->stringify(); 
-                         str += "/"; 
+                         str += " / "; 
                          str += Rnode->stringify();
                          return str;
-}
+	}
 };
 
 #endif

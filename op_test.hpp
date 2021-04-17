@@ -64,7 +64,7 @@ TEST(MultTest, MultEvalFloat)    {
         Op* testVal1 = new Op(8.88);
         Op* testVal2 = new Op(8.88);
         Base* Multi = new Mult(testVal1, testVal2);
-        EXPECT_EQ(Multi->evaluate(),78.8544);
+        EXPECT_NEAR(Multi->evaluate(),78.8544, 0.001);
 }
 
 TEST(MultTest, MultEvalString)    {
@@ -78,28 +78,28 @@ TEST(DivTest, DivEvalZero)    {
         Op* testVal1 = new Op(0);
         Op* testVal2 = new Op(8);
         Base* Divi = new Div(testVal1, testVal2);
-        EXPECT_EQ(Divi->evaluate(), 0);
+        EXPECT_NEAR(Divi->evaluate(), 0, 0.001);
 }
 
 TEST(DivTest, DivEval1)    {
         Op* testVal1 = new Op(16);
         Op* testVal2 = new Op(2);
         Base* Divi = new Div(testVal1, testVal2);
-        EXPECT_EQ(Divi->evaluate(), 8);
+        EXPECT_NEAR(Divi->evaluate(),8, 0.001);
 }
 
 TEST(DivTest, DivEvalNeg)    {
         Op* testVal1 = new Op(-16);
         Op* testVal2 = new Op(2);
         Base* Divi = new Div(testVal1, testVal2);
-        EXPECT_EQ(Divi->evaluate(), -8);
+        EXPECT_NEAR(Divi->evaluate(), -8, 0.001);
 }
 
 TEST(DivTest, DivEvalString)    {
         Op* testVal1 = new Op(16);
         Op* testVal2 = new Op(2);
         Base* Divi = new Div(testVal1, testVal2);
-        EXPECT_EQ(Divi->evaluate(), "16 / 2");
+        EXPECT_EQ(Divi->stringify(), "16 / 2");
 }
 
 
