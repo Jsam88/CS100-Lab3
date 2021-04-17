@@ -26,7 +26,7 @@ TEST(OpTest, OpEvaluateNeg)	{
 
 TEST(OpTest, OpEvaluateString)	{
 	Op* test = new Op(88);
-	EXPECT_EQ(test->evaluate(), "88");
+	EXPECT_EQ(test->stringify(), "88");
 }
 
 // TEST(RandomTest, RandomEval1)    {

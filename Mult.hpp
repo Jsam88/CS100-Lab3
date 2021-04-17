@@ -7,7 +7,13 @@
 #include <string>
 
 class Mult: public Base {
-        public:
+	 private:
+                Base* Lnode = NULL;
+                Base* Rnode = NULL;
+                std::string str;
+
+
+	 public:
                 Mult(Base* leftPtr, Base* rightPtr) {
                         Lnode = leftPtr;
                         Rnode = rightPtr;
@@ -16,14 +22,10 @@ class Mult: public Base {
                 virtual double evaluate() { return Lnode->evaluate() * Rnode->evaluate(); }
                 virtual std::string stringify() {
 			 str += Lnode->stringify();
-			 str += "*"; 
+			 str += " * "; 
 			 str += Rnode->stringify();
 			 return str;
-}
-        private:
-                Base* Lnode = NULL;
-                Base* Rnode = NULL;
-		std::string str;
+	}
 };
 
 #endif

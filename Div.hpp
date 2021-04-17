@@ -7,6 +7,11 @@
 #include <string>
 
 class Div: public Base {
+	private:
+                Base* Lnode = NULL;
+                Base* Rnode = NULL;
+                std::string str;
+
         public:
                 Div(Base * LEFT, Base* RIGHT) {
                         Lnode = LEFT;
@@ -20,11 +25,6 @@ class Div: public Base {
                          str += Rnode->stringify();
                          return str;
 }
-
-        private:
-                Base* Lnode = NULL;
-                Base* Rnode = NULL;
-		std::string str;
 };
 
 #endif
