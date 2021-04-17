@@ -8,9 +8,9 @@
 
 class Mult: public Base {
         public:
-                Mult(Base* LEFT, Base* RIGHT) {
-                        Lnode = LEFT;
-                        Rnode = RIGHT;
+                Mult(Base* leftPtr, Base* rightPtr) {
+                        Lnode = leftPtr;
+                        Rnode = rightPtr;
                 }
 
                 virtual double evaluate() { return Lnode->evaluate() * Rnode->evaluate(); }
