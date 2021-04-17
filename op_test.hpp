@@ -19,48 +19,58 @@ TEST(OpTest, OpEvaluateZero)	{
 	EXPECT_EQ(test->evaluate(), 0);
 }
 
-TEST(RandomTest, RandomEval1)    {
-        Random* test = new Random();
-        EXPECT_LT(test->evaluate(),100);
+TEST(OpTest, OpEvaluateNeg)	{
+	Op* test = new Op(-5);
+	EXPECT_EQ(test->evaluate(), -5);
 }
 
-TEST(RandomTest, RandomEval2)    {
-        Random* test = new Random();
-        EXPECT_LT(test->evaluate(),100);
+TEST(OpTest, OpEvaluateString)	{
+	Op* test = new Op(88);
+	EXPECT_EQ(test->evaluate(), "88");
 }
 
-TEST(MultTest, MultEval0)    {
-        Op* testVal1 = new Op(0);
-	Op* testVal2 = new Op(8);
-	Base* Multi = new Mult(testVal1, testVal2);
-        EXPECT_EQ(Multi->evaluate(), 0);
-}
+// TEST(RandomTest, RandomEval1)    {
+//         Random* test = new Random();
+//         EXPECT_LT(test->evaluate(),100);
+// }
 
-TEST(MultTest, MultEval1)    {
-        Op* testVal1 = new Op(5);
-        Op* testVal2 = new Op(10);
-        Base* Multi = new Mult(testVal1, testVal2);
-        EXPECT_EQ(Multi->evaluate(),50);
-}
+// TEST(RandomTest, RandomEval2)    {
+//         Random* test = new Random();
+//         EXPECT_LT(test->evaluate(),100);
+// }
 
-TEST(MultTest, MultEvalNeg)    {
-        Op* testVal1 = new Op(3);
-        Op* testVal2 = new Op(-2);
-        Base* Multi = new Mult(testVal1, testVal2);
-        EXPECT_EQ(Multi->evaluate(),-6);
-}
+// TEST(MultTest, MultEval0)    {
+//         Op* testVal1 = new Op(0);
+// 	Op* testVal2 = new Op(8);
+// 	Base* Multi = new Mult(testVal1, testVal2);
+//         EXPECT_EQ(Multi->evaluate(), 0);
+// }
 
-TEST(MultTest, MultEvalFloat)    {
-        Op* testVal1 = new Op(8.88);
-        Op* testVal2 = new Op(8.88);
-        Base* Multi = new Mult(testVal1, testVal2);
-        EXPECT_EQ(Multi->evaluate(),78.8544);
-}
-TEST(MultTest, MultEvalString)    {
-        Op* testVal1 = new Op(8);
-        Op* testVal2 = new Op(8);
-        Base* Multi = new Mult(testVal1, testVal2);
-        EXPECT_EQ(Multi->stringify(),"8 * 8");
-}
+// TEST(MultTest, MultEval1)    {
+//         Op* testVal1 = new Op(5);
+//         Op* testVal2 = new Op(10);
+//         Base* Multi = new Mult(testVal1, testVal2);
+//         EXPECT_EQ(Multi->evaluate(),50);
+// }
+
+// TEST(MultTest, MultEvalNeg)    {
+//         Op* testVal1 = new Op(3);
+//         Op* testVal2 = new Op(-2);
+//         Base* Multi = new Mult(testVal1, testVal2);
+//         EXPECT_EQ(Multi->evaluate(),-6);
+// }
+
+// TEST(MultTest, MultEvalFloat)    {
+//         Op* testVal1 = new Op(8.88);
+//         Op* testVal2 = new Op(8.88);
+//         Base* Multi = new Mult(testVal1, testVal2);
+//         EXPECT_EQ(Multi->evaluate(),78.8544);
+// }
+// TEST(MultTest, MultEvalString)    {
+//         Op* testVal1 = new Op(8);
+//         Op* testVal2 = new Op(8);
+//         Base* Multi = new Mult(testVal1, testVal2);
+//         EXPECT_EQ(Multi->stringify(),"8 * 8");
+// }
 
 #endif //__OP_TEST_HPP__
