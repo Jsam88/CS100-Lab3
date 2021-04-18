@@ -8,23 +8,25 @@
 #include "op.hpp"
 
 class Pow: public Base {
+
+	private:
+                Base* Lnode = NULL;
+                Base* Rnode = NULL;
+                std::string str;
         public:
                 Pow(Base * LEFT, Base* RIGHT) {
                         Lnode = LEFT;
                         Rnode = RIGHT;
                 }
 
-                virtual double evaluate() { return Lnode->evaluate() + Rnode->evaluate() ; }
+                virtual double evaluate() { return pow(Lnode->evaluate(), Rnode->evaluate()) ; }
                 virtual std::string stringify(){
                 str += Lnode->stringify();
-                str += "*";
+                str +=  " ^ ";
                 str += Rnode->stringify();
                 return str;
 }
-        private:
-                Base* Lnode = NULL;
-                Base* Rnode = NULL;
-		std::string str;
+
 };
 
 #endif

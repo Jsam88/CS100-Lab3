@@ -8,6 +8,10 @@
 
 
 class Add: public Base {
+	private:
+                Base* Lnode = NULL;
+                Base* Rnode = NULL;
+                std::string str;
         public:
                 Add(Base* LEFT, Base* RIGHT) {
                         Lnode = LEFT;
@@ -17,15 +21,11 @@ class Add: public Base {
 		virtual double evaluate() { return Lnode->evaluate() + Rnode->evaluate() ; }
                 virtual std::string stringify(){
 		str += Lnode->stringify();
-		str += "+";
+		str += " + ";
 		str += Rnode->stringify();
 		return str;
 }      
-
-	 private:
-                Base* Lnode = NULL;
-                Base* Rnode = NULL;
-		std::string str;
+              
 };
 
 #endif
