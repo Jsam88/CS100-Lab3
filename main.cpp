@@ -6,6 +6,9 @@
 #include "Pow.hpp"
 #include <string>
 #include "Sub.hpp"
+#include "Div.hpp"
+#include "Mult.hpp"
+#include "Random.hpp"
 
 
 int main() {
