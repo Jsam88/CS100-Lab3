@@ -15,4 +15,5 @@ class Random: public Base {
                 double num;
 };
 
+
 #endif

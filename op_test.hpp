@@ -102,5 +102,4 @@ TEST(DivTest, DivEvalString)    {
         EXPECT_EQ(Divi->stringify(), "16 / 2");
 }
 
-
 #endif //__OP_TEST_HPP__

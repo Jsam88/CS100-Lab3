@@ -17,7 +17,6 @@ class Div: public Base {
                         Lnode = LEFT;
                         Rnode = RIGHT;
                 }
-
                 virtual double evaluate() { return Lnode->evaluate() / Rnode->evaluate(); }
                 virtual std::string stringify() {
 			 str += Lnode->stringify(); 

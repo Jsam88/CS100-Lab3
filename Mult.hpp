@@ -11,8 +11,6 @@ class Mult: public Base {
                 Base* Lnode = NULL;
                 Base* Rnode = NULL;
                 std::string str;
-
-
 	 public:
                 Mult(Base* leftPtr, Base* rightPtr) {
                         Lnode = leftPtr;
